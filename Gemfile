@@ -39,6 +39,8 @@ gem "letter_opener", group: [:development]
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby'
 
+ gem "d3-rails"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

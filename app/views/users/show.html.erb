@@ -2,32 +2,30 @@
   <p>Hello, <%= @user.first_name %>!<p>
 
 
-<form id="send-text">
-  <input type="text", id="sendtext", placeholder="Enter Phone" />
-<button id="text">Text Card</button>
-</form>
+  <form id="send-text">
+    <input type="text", id="sendtext", placeholder="Enter Phone" />
+  <button id="text">Text Card</button>
+  </form>
 
-
-<% if @cards.empty? %>
-<%= link_to("Create a new card", new_user_card_path(@user)) %>
-<% else %>
-  <% @cards.each do |card| %>
-    <div class="card">
-      <ul>
-        <li><%= card.email %></li>
-        <li><%= card.phone_number %></li>
-        <li><%= card.organization %></li>
-        <li><%= card.position %></li>
-      </ul>
-    </div>
+  <%= form_tag(user_path) do %>
+    <%= email_field_tag 'email' %>
+    <%= submit_tag "Email Card" %>
   <% end %>
-  <%= link_to("Create another card", new_user_card_path(@user)) %>
-<% end %>
 
 
-
-<%= form_tag(user_path) do %>
-  <%= email_field_tag 'email' %>
-  <%= submit_tag "Email Card" %>
-<% end %>
+  <% if @cards.empty? %>
+  <%= link_to("Create a new card", new_user_card_path(@user)) %>
+  <% else %>
+    <% @cards.each do |card| %>
+      <div class="card">
+        <ul>
+          <li><%= card.email %></li>
+          <li><%= card.phone_number %></li>
+          <li><%= card.organization %></li>
+          <li><%= card.position %></li>
+        </ul>
+      </div>
+    <% end %>
+    <%= link_to("Create another card", new_user_card_path(@user)) %>
+  <% end %>
 </div>
