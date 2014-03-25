@@ -5,24 +5,24 @@
 
     <div class="flip-container2">
       <div class="flipper2">
-        <div id="<%= card.id %>" class="card front2" style="background-image: url('<%= card.background_image %>'); background-size: 100%";>
+        <div class="card front2" style="background-image: url('<%= @card.background_image %>'); background-size: 100%";>
           <div class="personal_info_list_wrapper">
             <div class="actual_list">
               <ul>
                 <h4>Email Address</h4>
-                <li><%= card.email %></li>
+                <li><%= @card.email %></li>
                 <h4>Phone Number</h4>
-                <li><%= card.phone_number %></li>
+                <li><%= @card.phone_number %></li>
                 <h4>Organization</h4>
-                <li><%= card.organization %></li>
+                <li><%= @card.organization %></li>
                 <h4>Position</h4>
-                <li><%= card.position %></li>
+                <li><%= @card.position %></li>
               </ul>
             </div>
           </div>
         </div>
         <div class="card back2">
-          <img src="<%= card.profile_picture %>" height="150px"/>
+          <img src="<%= @card.profile_picture %>" height="150px"/>
         </div>
       </div>
     </div>
