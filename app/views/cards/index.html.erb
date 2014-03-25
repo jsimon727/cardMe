@@ -11,7 +11,7 @@
       <%= f.text_field :group_name %>
       <%= f.submit "Submit" %>
       <% end %>
-  </div>
+    </div>
 
 
   <ul class="groups"> </ul>
@@ -19,20 +19,16 @@
 
 
 
-<div class='connection-box'>
-  <h3 id='connection-box-text'>See All Your Connections</h3>
-  <ul class="connection-cards"></ul>
-</div>
+  <div class='connection-box'>
+    <h3 id='connection-header'>See All Your Connections</h3>
+    <ul class="connection-cards"></ul>
+  </div>
+</section> <!--close off section-->
 
-<!--     <div class="groups">
-    </div> -->
-
-
-  <div class ="right-side-dashboard">
+<section id ="right-side-dashboard">
     <div class="showcard">
     </div>
 
-</section> <!--close off roladex-->
     <div class="news-stories">
       <h3 id='news-stories-header'>News Stories</h3>
       <ul class ='articles'>
@@ -40,9 +36,10 @@
     </div>
 
 
-  <div class='company_summary_header'> 
-    <h3 id='company-box-head'>Company Summary</h3>
+  <div class='company-summary-box'> 
+    <h3 id='company-header'>Company Summary</h3>
   </div>
+</section>
   
 
    <%= javascript_include_tag "cards", "data-turbolinks-track" => true %>
