@@ -41,22 +41,28 @@
 <% else %>
   <% @cards.each do |card| %>
 
-    <div id="<%= card.id %>" class="card" style="background-image: url('<%= card.background_image %>'); background-size: 100%";>
-      <div class="personal_info_list_wrapper">
-        <div class="actual_list">
-          <ul>
-            <h4>Email Address</h4>
-            <li><%= card.email %></li>
-            <h4>Phone Number</h4>
-            <li><%= card.phone_number %></li>
-            <h4>Organization</h4>
-            <li><%= card.organization %></li>
-            <h4>Position</h4>
-            <li><%= card.position %></li>
-          </ul>
+    <div class="flip-container2">
+      <div class="flipper2">
+        <div id="<%= card.id %>" class="card front2" style="background-image: url('<%= card.background_image %>'); background-size: 100%";>
+          <div class="personal_info_list_wrapper">
+            <div class="actual_list">
+              <ul>
+                <h4>Email Address</h4>
+                <li><%= card.email %></li>
+                <h4>Phone Number</h4>
+                <li><%= card.phone_number %></li>
+                <h4>Organization</h4>
+                <li><%= card.organization %></li>
+                <h4>Position</h4>
+                <li><%= card.position %></li>
+              </ul>
+            </div>
+          </div>
+          <!--<div class="card-profile-pic" style="background-image: url('<%= card.profile_picture %>'); background-size: 100% 100%; height: 90px; width: 75px"></div>-->
         </div>
-      </div>
-            <div class="card-profile-pic" style="background-image: url('<%= card.profile_picture %>'); background-size: 100% 100%; height: 90px; width: 75px">
+        <div class="card back2">
+          <img src="<%= card.profile_picture %>" height="150px"/>
+        </div>
       </div>
     </div>
     <ul class="edit">
