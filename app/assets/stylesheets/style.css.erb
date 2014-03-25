@@ -7,7 +7,6 @@ body{
   margin-top: 130px;
   list-style-type: none;
   font-family: 'Muli', sans-serif;
-  background: rgb(211,212,214);;
 }
 
 header{
@@ -470,43 +469,66 @@ USER PROFILE PAGE
 DASHBOARD
 *****************/
 
-.news-stories{
-  position: relative;
-  right: 55px;
-  top: -80px;
-/*  border-radius: 10px;*/
-  float: right;
-  width: 40%;
-  background: rgb(242, 243, 245);
-  height: 300px;
-  width: 550px;
-
+.roladex{
+  width: 100%;
+  margin-top: 80px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
-#news-stories-header{
+#menu-column{
+  margin-top: 30px;
+  width: 500px;
+  float: left;
+}
+
+#right-side-dashboard{
+  margin-top: 30px;
+  width: 500px;
+  float: right;
+  margin-right: 300px;
+}
+
+.news-stories {
+  border-radius: 10px;
+  width: 40%;
+  background: rgb(242, 243, 245);
+  height: 400px;
+  width: 550px;
+}
+
+.articles{
+  padding: 20px;
+  font-size: 12pt;
+}
+
+#news-stories-header, #company-header, #connection-header{
   color: white;
+  padding-top: 20px;
   height: 40px;
   background: rgb(62,62,64);
   text-align: center;
 }
 
-.articles li a{
-  color: rgb(155, 209, 31);
+.company_summary{
+  padding: 40px;
+  font-size: 12pt;
+}
+
+.articles a{
   text-decoration: none;
+  padding: 3px;
+  color: black;
+}
+
+.articles a:hover{
+  color: #B60707;
 }
 
 .showcard{
   padding: 20px;
-  position: absolute;
-  top: 10px;
-  left: 725px;
-  width: 50%;
-  border: 1px solid red;
-}
-
-.card{
-  position: relative;
-  border: 2px solid black;
+  height: 200px;
+  margin-bottom: 10px;
 }
 
 .groups_popup{
@@ -549,13 +571,6 @@ DASHBOARD
   position: relative;
   top: 20px;
   background: rgb(242, 243, 245);
-}
-
-#connection-box-text{
-  background: rgb(62,62,64);
-  height: 40px;
-  color: white;
-  text-align: center;
 }
 
 .arrow, .add, .delete-connection{
@@ -625,10 +640,6 @@ DASHBOARD
   position: relative;
 }
 
-/*.roladex{
-  background: rgb(211,212,214);
-  padding: 30px;
-}*/
 
 #dashboard-groups{
   /*border: 1px solid black;*/
@@ -656,30 +667,14 @@ DASHBOARD
   -moz-box-sizing: border-box;    
   box-sizing: border-box; 
 }
-#menu-column{
-  width: 500px;
-  position: relative;
-  top: 100px;
-  left: 20px;
-}
 
-.company_summary{
-  position: relative;
-  top: 200px;
-  left: 520px;
-  width: 500px;
-  height: 200px;
+.company-summary-box{
   background: rgb(242, 243, 245);
-  padding: 20px;
-  text-align: justify;
-}
-
-.company_summary_header{
-  background: rgb(242, 243, 245);
-  width: 540px;
-  height: 250px;
-  margin-left: 660px;
-  margin-top: -396px;
+  height: 500px;
+  margin-top: 30px;
+  width: 550px;
+  margin-bottom: 20px;
+  border-radius: 0 0 10px 10px;
 }
 
 #company-box-head{
@@ -688,6 +683,7 @@ DASHBOARD
   color: white;
   text-align: center;
   padding: 5px;
+
 }
 
 #group_form{

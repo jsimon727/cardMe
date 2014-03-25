@@ -30,7 +30,7 @@
       $(".addconnection").on("click", function() {
         $.post("/connections", {user: <%=current_user.id %>, card: <%= @card.id%>}).done(function(response_connection){
           if (response_connection.success ==true ){
-            window.location = 'http://localhost:3000/users/' +response_connection.id + '/cards';
+            window.location = 'http://localhost:3000/users/' + response_connection.id + '/cards';
           }
         });
       });
