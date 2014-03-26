@@ -68,7 +68,7 @@ function cardDashboard(){
   $(this).parent().parent().find(".card").clone().appendTo(".showcard");
   $(".showcard .cardmenu").remove();
   cardId = $(".showcard .card").attr("id");
-  console.log(cardId)
+  // console.log(cardId)
   $(".articles li").remove();
   $.get("/card_dashboard/"+cardId, {card_id: cardId}, function(response){
       companySummary = response[0]["company_summary"];
@@ -76,7 +76,7 @@ function cardDashboard(){
       companyNews = response[0].news;
       for (var i = 0; i < 4; i++){
         newsResponse = companyNews[i];
-        $(".articles").append($("<a href='" + newsResponse["Url"] + "'><li>" + newsResponse["Title"] + "</li></a>"));
+        $("ul.articles").append("<a href='" + newsResponse["Url"] + "'><li>Article:" + newsResponse["Title"] + "</li></a>")
       }
     });
 }

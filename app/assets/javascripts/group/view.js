@@ -30,7 +30,7 @@ function renderGroupsPopup(){
   $("<button class='popup-save'> Close </button>")
     .appendTo(popup)
     .on("click", function() {
-      popup.remove();
+      window.location.reload()
     });
 }
 
