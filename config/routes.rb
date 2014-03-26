@@ -4,7 +4,15 @@ Cardme::Application.routes.draw do
   resources :users do
     resources :cards, shallow: true 
     resources :groups
+    resources :connections
   end
+
+  resources :cards, only: [:index]
+
+
+  get "/users/:user_id/connections/:id/cards", to: "cards#allcards"
+
+ get "/groupsconnections", to: "groups_connections#index"
 
   post "/users/:id", to: "users#send_mail"
   post "/users/:id/sms", to: "users#send_sms"
@@ -14,6 +22,8 @@ Cardme::Application.routes.draw do
   post "/invitesession", to: "session#newsession" 
 
   post "/joinfrominvite", to: "invites#create"
+
+  #get "/allcards", to: "cards#allcards"
 
   get "/connections", to: "connections#index"
   get "/connections/:id/groupsconnections", to: "groups_connections#index"
@@ -26,7 +36,7 @@ Cardme::Application.routes.draw do
   # get "/groupsconnections", to: "groups_connections#index"
 
   #get "/groupsconnections", to: "groups_connections#index"
-  get "connections/:id/groupsconnections", to: "groups_connections#index"
+  #get "connections/:id/groupsconnections", to: "groups_connections#index"
 
 
   get "/login", to: "session#new"

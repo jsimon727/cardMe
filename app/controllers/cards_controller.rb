@@ -3,12 +3,19 @@ class CardsController < ApplicationController
   before_action(:load_card, {only: [:edit, :update, :destroy, :show] })
   
   def index
-    @group = Group.new
-    @user = current_user
-    @groups = current_user.groups
-    @connections = @user.connections
-    @cards = @user.cards.all
-    @all_cards = Card.all
+    respond_to do |format|
+      format.html do
+        @group = Group.new
+        @user = current_user
+        @groups = current_user.groups
+        @connections = @user.connections
+        @cards = @user.cards.all
+      end
+
+      format.json do
+        render json: Card.all
+      end
+    end
   end
 
   def edit
