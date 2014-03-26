@@ -47,8 +47,7 @@ Connection.getConnections();
 // ...is a callback in the $.ajax.success functions
 function findCardToRenderAndRender() {
   if(CardMe.numberLoaded === 3) {
-    addGroups();
-    showGroups();
+    
     for(var i = 0; i < CardMe.connections.length; i++){
       for(var j = 0; j < CardMe.cards.length; j++){
         var connectionCardId = CardMe.connections[i].cardId;
@@ -57,6 +56,8 @@ function findCardToRenderAndRender() {
         if (connectionCardId === cardId){ CardMe.cards[j].render(); }
       }
     }
+    addGroups();
+    showGroups();
   } else {
     CardMe.numberLoaded++;
     console.log("Number loaded: " + CardMe.numberLoaded);
