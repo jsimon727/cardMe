@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     @twilio_client.account.sms.messages.create(
       :from => "+17472013048",
       :to => "+1#{@phone}",
-      :body => "#{@user.first_name} has sent you a cardMe, Click link to view: http://localhost:3000/invite?=#{@token.secret_key}"
+      :body => "#{@user.first_name} has sent you a cardMe, Click link to view: http://getcarded.herokuapp.com/invite?=#{@token.secret_key}"
       )
   end
 

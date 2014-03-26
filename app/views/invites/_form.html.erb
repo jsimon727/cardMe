@@ -28,7 +28,7 @@
                   $.post("/connections", {user:response.id, card: <%= @card.id%>}).done(function(response_connection){
                     console.log("hello")
                     if (response_connection.success ==true ){
-                      window.location = 'http://localhost:3000/users/' +response_connection.id + '/cards';
+                      window.location = 'http://getcarded.herokuapp.com/users/' +response_connection.id + '/cards';
                     }
                   })
                 });
