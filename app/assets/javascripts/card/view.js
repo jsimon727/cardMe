@@ -15,4 +15,5 @@ Card.prototype.render = function() {
     $("<li>" + "Position: " + this.card.position + "</li>").appendTo(cards);
     $("<button class='add' data-connection=" + this.card.id + "> + </button>").appendTo(cardmenu).on("click", renderGroupsPopup);
     $("<button class='arrow'> > </button>").appendTo(cardmenu).on("click", cardDashboard);
+
 }

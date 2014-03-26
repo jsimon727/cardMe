@@ -65,6 +65,36 @@ function isCheckboxChecked(groupId, connectionId){
 }
 
 
+function addGroups() {
+  $('#group_form').on("submit", function(e){
+    e.preventDefault();
+    input = $('input#group_group_name');
+    $.ajax({
+      url: '/users/' + localStorage["user_id"] + '/groups',
+      type: 'POST',
+      data: {group_name: input.val()}
+    });
+    input.val("");
+  showGroups();
+  });
+}
+
+function showGroups(){
+  $('ul.groups').empty();
+  for(var i=0; i< CardMe.groups.length; i++) {
+    $('ul.groups').append($("<li>" + CardMe.groups[i].name + "</li>").append("<span id=" + CardMe.groups[i].id + "> X </span>")).on("click", function(e) {
+      var groupId = e.target.id;
+      $.ajax({
+        url: '/users/' + localStorage["user_id"] + '/groups/' + groupId,
+        type: "DELETE",
+        success: function() {
+          e.target.parentElement.remove();
+        }
+      })
+    })
+  }
+}
+
 
 // CardMe.groupsconnections 
 

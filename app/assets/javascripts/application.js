@@ -36,6 +36,9 @@ ConnectionGroup.getConnectionsGroups(); // pull all our groups connections
 Group.getGroups();                      // pull all ours users groups
 Connection.getConnections();
 
+
+
+
 // this function compares users groups to groupsConnections
 // and then finds a card to render and calls render function
 // but only after all the above have run and loaded results,
@@ -44,6 +47,8 @@ Connection.getConnections();
 // ...is a callback in the $.ajax.success functions
 function findCardToRenderAndRender() {
   if(CardMe.numberLoaded === 3) {
+    addGroups();
+    showGroups();
     for(var i = 0; i < CardMe.connections.length; i++){
       for(var j = 0; j < CardMe.cards.length; j++){
         var connectionCardId = CardMe.connections[i].cardId;
@@ -120,19 +125,7 @@ $(document).ready(function(){
 // };
 
 
-// function addGroups() {
-//   $('#group_form').on("submit", function(e){
-//     e.preventDefault();
-//     input = $('input#group_group_name');
-//     $.ajax({
-//       url: '/users/' + localStorage["user_id"] + '/groups',
-//       type: 'POST',
-//       data: {group_name: input.val()}
-//     });
-//     input.val("");
-//   showGroups();
-//   });
-// }
+
 
 // function showGroups() {
 //   $.getJSON("/users/" + localStorage["user_id"] + "/groups", function(groups) {
