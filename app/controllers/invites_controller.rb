@@ -6,7 +6,7 @@ class InvitesController < ApplicationController
     equal_sign_index = token_key.index("=") + 1
     token_key = token_key.join("")
     token_key = token_key[equal_sign_index, token_key.length-1]
-    @token = Token.find_by(secret_key: token_key)
+    @token = Token.find_by(secret_key: token_key) 
     @card = Card.find_by(id: @token.card_id)
   end
 

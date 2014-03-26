@@ -137,7 +137,7 @@ body{
   margin-top: -5px;
 }
 
-.login .button, .addGroupButton, .form input[type='submit'] {
+.login .button, .addGroupButton, .form input[type='submit'], .joinForm input[type='submit'], .addconnection {
   -moz-box-shadow:inset 0px 1px 0px 0px #f5978e  ;
   -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e  ;
   box-shadow:inset 0px 1px 0px 0px #f5978e  ;
@@ -147,7 +147,7 @@ body{
   background-color:#b60707  ;
 }
 
-.login .button, .addGroupButton, .form input[type='submit'] {
+.login .button, .addGroupButton, .form input[type='submit'], button.joinbutton, .addconnection {
   -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
   -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
   box-shadow:inset 0px 1px 0px 0px #f5978e;
@@ -183,14 +183,14 @@ body{
   text-shadow:1px 1px 0px #810e05;
 }
 
-.login .button:hover, .form input[type='submit']:hover {
+.login .button:hover, .form input[type='submit']:hover, button.joinbutton:hover, .addconnection:hover {
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d40b0b), color-stop(1, #b60707) );
   background:-moz-linear-gradient( center top, #d40b0b 5%, #b60707 100% );
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d40b0b', endColorstr='#b60707');
   background-color:#d40b0b;
 }
 
-.login .button:active, .form input[type='submit']:active {
+.login .button:active, .form input[type='submit']:active, button.joinbutton:active, .addconnection:active {
   position:relative;
   top:1px;
 }
@@ -769,4 +769,23 @@ FORM
 .form input[type='submit']{
   margin-top: 10px;
   width: 120px;
+}
+
+.joinForm{
+  width: 200px;
+  margin-left: 20px;
+  font-size: 12pt;
+}
+
+button.joinbutton{
+  width: 200px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.invitelogin{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 350px;
+  padding: 20px;
 }

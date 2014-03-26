@@ -44,6 +44,12 @@ gem 'httparty'
 
 gem "letter_opener", group: [:development, :test]
 
+gem 'nokogiri'
+
+gem 'premailer-rails3'
+
+gem 'roadie'
+
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby'
 

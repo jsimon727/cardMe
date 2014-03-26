@@ -5,8 +5,11 @@
 <% end %> 
 
 <form class="invitelogin">
+  <h2>LOG IN</h2>
+  <hr>
+  <br>
   Email: <input type="email" name="email"><br>
-  Password: <input type="password" name="password">
+  Password: <input type="password" name="password"><br>
   <input type="submit" value="Log In">
 </form>
 
@@ -43,11 +46,11 @@
   })
 
   $(".joinbutton").on("click", function(addButton){
-      $(".joinForm").append("Email: <input type='email', name='email'></input>");
-      $(".joinForm").append("Password: <input type='password', name='password'></input>");
-      $(".joinForm").append("Password Confirmation: <input type='password', name='password_confirmation'></input>");
-      $(".joinForm").append("First Name: <input type='text', name='first_name'></input>");
-      $(".joinForm").append("Last Name: <input type='text', name='last_name'></input>");
+      $(".joinForm").append("Email: <input type='email', name='email'></input><br>");
+      $(".joinForm").append("Password: <input type='password', name='password'></input><br>");
+      $(".joinForm").append("Password Confirmation: <input type='password', name='password_confirmation'></input><br>");
+      $(".joinForm").append("First Name: <input type='text', name='first_name'></input><br>");
+      $(".joinForm").append("Last Name: <input type='text', name='last_name'></input><br>");
       $(".joinForm").append("<input type='submit', value='Join'></input>");
       $(".invitelogin").remove();
       $(".joinbutton").remove();
