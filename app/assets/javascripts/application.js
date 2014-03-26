@@ -72,9 +72,10 @@ function cardDashboard(){
   // console.log(cardId)
   $(".articles li").remove();
   $.get("/card_dashboard/"+ parseInt(cardId), {card_id: cardId}, function(response){
+      console.log(cardId)
       companySummary = response[0]["company_summary"];
       $("<div class='company_summary'> Summary:" + companySummary + "</div>").appendTo(".company-summary-box");
-      companyNews = response[0].news;
+      companyNews = response[0]["news"];
       for (var i = 0; i < 4; i++){
         newsResponse = companyNews[i];
         $("ul.articles").append("<a href='" + newsResponse["Url"] + "'><li>Article:" + newsResponse["Title"] + "</li></a>")
