@@ -58,23 +58,23 @@ function findCardToRenderAndRender() {
   }
 }
 
-// function cardDashboard(){
-//   $(".showcard div").remove();
-//   $(this).parent().parent().find(".card").clone().appendTo(".showcard");
-//   $(".showcard .cardmenu").remove();
-//   cardId = $(".showcard .card").attr("id");
-//   console.log(cardId);
-//   $(".articles li").remove();
-//   $.get("/card_dashboard/"+cardId, {card_id: cardId}, function(response){
-//       companySummary = response[0]["company_summary"];
-//       $("<div class='company_summary'> Summary:" + companySummary + "</div>").appendTo(".company-summary-box");
-//       companyNews = response[0].news;
-//       for (var i = 0; i < 4; i++){
-//         newsResponse = companyNews[i];
-//         $(".articles").append($("<a href='" + newsResponse["Url"] + "'><li>" + newsResponse["Title"] + "</li></a>"));
-//       }
-//     });
-// }
+function cardDashboard(){
+  $(".showcard div").remove();
+  $(this).parent().parent().find(".card").clone().appendTo(".showcard");
+  $(".showcard .cardmenu").remove();
+  cardId = $(".showcard .card").attr("id");
+  console.log(cardId)
+  $(".articles li").remove();
+  $.get("/card_dashboard/"+cardId, {card_id: cardId}, function(response){
+      companySummary = response[0]["company_summary"];
+      $("<div class='company_summary'> Summary:" + companySummary + "</div>").appendTo(".company-summary-box");
+      companyNews = response[0].news;
+      for (var i = 0; i < 4; i++){
+        newsResponse = companyNews[i];
+        $(".articles").append($("<a href='" + newsResponse["Url"] + "'><li>" + newsResponse["Title"] + "</li></a>"));
+      }
+    });
+}
 
 
 

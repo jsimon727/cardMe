@@ -138,7 +138,8 @@ body{
   margin-top: -5px;
 }
 
-.login .button, .addGroupButton, .form input[type='submit'], .joinForm input[type='submit'], .addconnection {
+
+.login .button, .addGroupButton, .form input[type='submit'], .joinForm input[type='submit'], .addconnection, .popup-save {
   -moz-box-shadow:inset 0px 1px 0px 0px #f5978e  ;
   -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e  ;
   box-shadow:inset 0px 1px 0px 0px #f5978e  ;
@@ -148,7 +149,8 @@ body{
   background-color:#b60707  ;
 }
 
-.login .button, .addGroupButton, .form input[type='submit'], button.joinbutton, .addconnection {
+
+.login .button, .addGroupButton, .form input[type='submit'], button.joinbutton, .addconnection, .popup-save {
   -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
   -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
   box-shadow:inset 0px 1px 0px 0px #f5978e;
@@ -184,14 +186,16 @@ body{
   text-shadow:1px 1px 0px #810e05;
 }
 
-.login .button:hover, .form input[type='submit']:hover, button.joinbutton:hover, .addconnection:hover {
+
+.login .button:hover, .form input[type='submit']:hover, button.joinbutton:hover, .addconnection:hover, .popup-save:hover {
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d40b0b), color-stop(1, #b60707) );
   background:-moz-linear-gradient( center top, #d40b0b 5%, #b60707 100% );
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d40b0b', endColorstr='#b60707');
   background-color:#d40b0b;
 }
 
-.login .button:active, .form input[type='submit']:active, button.joinbutton:active, .addconnection:active {
+
+.login .button:active, .form input[type='submit']:active, button.joinbutton:active, .addconnection:active, .popup-save:active {
   position:relative;
   top:1px;
 }
@@ -214,18 +218,12 @@ body{
 .login .inputinfo{
   line-height: 8pt;
   width: 80%;
-
 }
-
 
 .success {
   color: red;
   font-style: italic;
 }
-
-/**********
-JOIN FORM
-***********/
 
 
 /**********
@@ -590,12 +588,13 @@ DASHBOARD
 .groups_popup{
   /*border: 1px solid black;*/
   border-radius: 10px;
-  background-color: rgba(134,164,183,0.5);
-  width: 150px;
+  background-color: rgba(242, 243, 245, 0.5);
+  width: 180px;
   height: 150px;
   position: absolute;
   top: 0px;
-  right: -40px;
+  right: -80px;
+  padding-left: 10px;
  /* overflow-y:scroll*/
 }
 
@@ -607,6 +606,7 @@ DASHBOARD
 
 .groups_popup li input{
   margin-left: 5px;
+  margin-right: 5px;
 }
 
 .groups span {

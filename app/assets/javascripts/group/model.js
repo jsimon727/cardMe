@@ -13,7 +13,7 @@ function Group(name, id) {
 Group.getGroups = function(){
   $.getJSON("/users/" + localStorage["user_id"] + "/groups", function(userGroups){
     for(var i=0; i < userGroups.length; i++){
-      var group = new Group(userGroups[i].group_name, userGroups[i].user_id);
+      var group = new Group(userGroups[i].group_name, userGroups[i].id);
       CardMe.groups.push(group);
     }
   }).success(findCardToRenderAndRender);

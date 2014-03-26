@@ -1,37 +1,42 @@
 function renderGroupsPopup(){
+  console.log("POP UP VIDEO!");
 
-  var popup = $("<ul class ='groups_popup'>")
+  // create and append popup!
+  var popup = $("<ul class ='groups_popup'>");
   popup.appendTo($(this).parent());
+  
+  //for each group, show the group
   for(var i=0; i < CardMe.groups.length; i++ ){
-    var group = $("<li data-connection=" + CardMe.groups[i].id + ">" + CardMe.groups[i].name + "</li>")
-    group.appendTo(popup);
-    var checkbox = $("<input type='checkbox'>");
-    checkbox.prop("checkbox", false);
-    isCheckboxChecked(checkbox);
-    checkbox.appendTo(group);
+    var groupId   = CardMe.groups[i].id;
+    var groupName = CardMe.groups[i].name;
+    var connectionId = popup.siblings(".add").data("connection")
 
-    var groupId = checkbox.parent().attr("data-connection");
-    console.log("groupid:" + groupId)
-    var connectionId = checkbox.parent().parent().parent().find(".add").attr("data-connection");
-    console.log("connectionId" + connectionId)
-
-    checkbox.attr("data-connection", connectionId)
-    checkbox.attr("data-group", groupId)
-
-    checkbox.on("change", function() {
-      if(this.checked === false) {
-         deleteGroupConnection(connectionId, groupId)
-      } else {
-        postGroupConnection(connectionId, groupId)
-    }
-  })
-}
-  $("<button class='popup_save'> Close </button>").appendTo(popup);
+    var listItem = $("<li data-group=" + groupId + ">" + groupName + "</li>")
+    listItem.appendTo(popup);
+    
+    $("<input type='checkbox'>")
+      .attr("checked",    isCheckboxChecked(groupId, connectionId))
+      .data("group",      groupId)
+      .data("connection", connectionId)
+      .prependTo(listItem)
+      .on("change", function() {
+        if(this.checked === false) {
+          deleteGroupConnection(connectionId, $(this).parent().data("group"));
+        } else {
+          postGroupConnection(connectionId,   $(this).parent().data("group"));
+        }
+      });
+  }
+  $("<button class='popup-save'> Close </button>")
+    .appendTo(popup)
+    .on("click", function() {
+      popup.remove();
+    });
 }
 
 
 function postGroupConnection(connectionId, groupId) {
-    $.ajax({
+  $.ajax({
     url: "/groupsconnections",
     data: {connection: connectionId, group: groupId},
     type: "POST"
@@ -39,29 +44,24 @@ function postGroupConnection(connectionId, groupId) {
 };
 
 function deleteGroupConnection(connectionId, groupId) {
-   $.ajax({
+  $.ajax({
     url: "/groupsconnections",
     data: {connection: connectionId, group: groupId},
     type: "DELETE"
   });
 };
 
-function isCheckboxChecked(checkbox){
-  console.log("checkboxinsidecheckfunction:" + checkbox);
-  
-  var connectionId = checkbox.attr("data-connection");
-  var groupId = checkbox.attr("data-group");
-
-  console.log("Connection ID" + connectionId);
-   console.log("Group ID" + groupId);
-
+function isCheckboxChecked(groupId, connectionId){
+  console.log("Connection ID: " + connectionId);
+  console.log("Group ID: "      + groupId);
 
   for(var i = 0; i < CardMe.groupsconnections.length; i++){
-    if((CardMe.groupsconnections[i].connectionId == connectionId ) && (CardMe.groupsconnections[i].groupId == groupId )){
-        checkbox.prop("checked", true);
-        console.log("HERE!");
+    if( (CardMe.groupsconnections[i].connectionId == connectionId ) && 
+        (CardMe.groupsconnections[i].groupId == groupId ) ){
+      return true;
     }
   }
+  return false;
 }
 
 

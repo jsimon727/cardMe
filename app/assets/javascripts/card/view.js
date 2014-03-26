@@ -1,5 +1,5 @@
 Card.prototype.render = function() {
-    var cards = $("<div class='card'>");
+    var cards = $("<div id=" + this.card.id + " class='card'>");
     var cardmenu = $("<div class='cardmenu'>x");
     var cardContainer = $("<div class='cardContainer'>");
     cardContainer.appendTo(".connection-cards");
@@ -14,7 +14,5 @@ Card.prototype.render = function() {
     $("<li>" + "Organization: " + this.card.organization + "</li>").appendTo(cards);
     $("<li>" + "Position: " + this.card.position + "</li>").appendTo(cards);
     $("<button class='add' data-connection=" + this.card.id + "> + </button>").appendTo(cardmenu).on("click", renderGroupsPopup);
-    $("<button class='arrow'> > </button>").appendTo(cardmenu).on("click", console.log("DASH!"));//cardDashboard);
+    $("<button class='arrow'> > </button>").appendTo(cardmenu).on("click", cardDashboard);
 }
-
-
