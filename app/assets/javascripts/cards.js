@@ -43,11 +43,11 @@ function makeCards(i){
     $("<li>" + "Position: " + cardFound.position + "</li>").appendTo(cards);
 
     if (parseInt(cardFound.id) <= 9){
-      $(".card").css({"background-image": "url('http://s3.amazonaws.com/cardMe/cards/background_images/000/000/00" + cardFound.id + "/original/" + cardFound.background_image_file_name + "')" });
+      $(".card").css({"background-image": "url('http://s3.amazonaws.com/cardMe/cards/background_images/000/000/00" + cardFound.id + "/original/" + cardFound.background_image_file_name + "')", "background-size": "100%" });
     } else if ((parseInt(cardFound.id) <= 99)) {
-    $(".card").css({"background-image": "url('http://s3.amazonaws.com/cardMe/cards/background_images/000/000/0" + cardFound.id + "/original/" + cardFound.background_image_file_name + "')" });
+    $(".card").css({"background-image": "url('http://s3.amazonaws.com/cardMe/cards/background_images/000/000/0" + cardFound.id + "/original/" + cardFound.background_image_file_name + "')", "background-size": "100%" });
     } else {
-      $(".card").css({"background-image": "url('http://s3.amazonaws.com/cardMe/cards/background_images/000/000/" + cardFound.id + "/original/" + cardFound.background_image_file_name + "')" });
+      $(".card").css({"background-image": "url('http://s3.amazonaws.com/cardMe/cards/background_images/000/000/" + cardFound.id + "/original/" + cardFound.background_image_file_name + "')", "background-size": "100%" });
     }
 
     $("<button class='add'> + </button>").appendTo(cardmenu).on("click", addCardToGroup);

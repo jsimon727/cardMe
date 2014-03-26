@@ -12,7 +12,6 @@
     <%= f.label :position %>:
     <%= f.text_field :position %></br>
     <%= f.file_field :background_image, placeholder:"Upload Card Background"%>
-    <%= f.file_field :ogranization_logo, placeholder:"Upload logo"%>
     <%= f.file_field :profile_picture, placeholder:"Upload Your Beauty"%>
     <%= f.submit @card.id.nil? ? "CardMe!" : "Save Changes" %>
   <% end %>
