@@ -1,4 +1,4 @@
-
+<body class='dashboard'>
 <div class='roladex'>
 
 <section id='menu-column'>
@@ -7,7 +7,7 @@
 
     <div id="group_form">
       <%= form_for [@user, @group] do |f| %>
-      submit <%= f.label :group_name %>
+      Group Name:
       <%= f.text_field :group_name %>
       <%= f.submit "Submit" %>
       <% end %>
@@ -41,6 +41,7 @@
   </div>
 </section>
 </div> <!--close off roladex -->
+</body>
 
 
 
