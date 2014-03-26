@@ -22,7 +22,9 @@
           </div>
         </div>
         <div class="card front2">
+         <% if @card.profile_picture_file_name != nil %>
           <img src="<%= @card.profile_picture %>" height="150px"/>
+          <% end %>
         </div>
       </div>
     </div>
