@@ -1,7 +1,7 @@
 <% unless logged_in? %>
   <button class="joinbutton">JOIN CARDME</button>
-    <form class="joinForm">
-    </form>
+  <form class="joinForm">
+  </form>
 <% end %> 
 
 <form class="invitelogin">
@@ -26,7 +26,6 @@
                 $("invitelogin").remove();
                 $(".addbutton").on("click", function() {
                   $.post("/connections", {user:response.id, card: <%= @card.id%>}).done(function(response_connection){
-                    console.log("hello")
                     if (response_connection.success ==true ){
                       window.location = 'http://getcarded.herokuapp.com/users/' +response_connection.id + '/cards';
                     }
@@ -58,15 +57,17 @@
       
       $(".joinForm").on("submit", function(e){
         e.preventDefault();
-        $.post('/joinfrominvite', { email: $("input[name='email']").val(), 
-                           password: $("input[name='password']").val(), 
-                           password_confirmation: $("input[name='password_confirmation']").val(), 
-                           first_name: $("input[name='first_name']").val(), 
-                           last_name: $("input[name='last_name']").val()}, function(){
-                            $(".joinForm").remove();
-                            $(".addbutton").remove();
-                            window.location.reload()
-                           } )
+        $.post('/joinfrominvite', 
+          { email: $("input[name='email']").val(), 
+            password: $("input[name='password']").val(), 
+            password_confirmation: $("input[name='password_confirmation']").val(), 
+            first_name: $("input[name='first_name']").val(), 
+            last_name: $("input[name='last_name']").val()},
+            function(){
+              $(".joinForm").remove();
+              $(".addbutton").remove();
+              window.location.reload()
+            } )
       }); 
 
 </script>
